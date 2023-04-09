@@ -4,9 +4,7 @@ class Utilisateurs extends Controller{//classe utilisée pour la gestion du logi
     
     public function login(){
         $this->loadModel("Utilisateur");
-        
-        $this->layout='login';//le layout login comprend l'element html, snippet du formulaire de connexion par sa constante LOGIN
-        $this->theme='login';
+      
         
         if(!empty($_SESSION['login'])){
             header('Location: '.HTTPS.'://'.$_SERVER['HTTP_HOST'].'/admin');
@@ -14,7 +12,10 @@ class Utilisateurs extends Controller{//classe utilisée pour la gestion du logi
         }else{      
            
             if (isset($_POST['submit'])){ 
-                
+                  
+                $this->layout='login';//le layout login comprend l'element html, snippet du formulaire de connexion par sa constante LOGIN
+                $this->theme='login';
+
                 if(!empty($_POST['identifiant_user']) && !empty($_POST['password'])){
                     $password = htmlspecialchars($_POST['password']);
                     $mail=htmlspecialchars($_POST['identifiant_user']);
@@ -34,8 +35,9 @@ class Utilisateurs extends Controller{//classe utilisée pour la gestion du logi
                 }
                 
             }
+            $this->render('login',[],'pages');
         }
-        $this->render('login',[],'pages');
+       
     
     }
     
