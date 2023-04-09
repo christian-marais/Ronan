@@ -3,7 +3,7 @@
 abstract class Model{//classe contenant la connexion à la bdd ainsi que des méthodes contenant des requetes basique d'accès à la bdd
     // Informations de base de données
 
-    private $host="localhost";
+    private $host="localhost:3306";
     private $dbname="vign7559_ronan";
     private $username = "ronan";
     private $password="Mo2p@ss974";
