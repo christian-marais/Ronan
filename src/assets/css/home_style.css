@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Farro:wght@400;700&family=Montserrat&family=Poppins:wght@100&family=Righteous&display=swap');
+
+:root{
+    font-size: clamp(14px,calc(16 * 0.015 * 10vmin),16px);
+}
+
+body{
+    padding:0;
+    margin:0;
+    font-family: 'Poppins', 'sans-serif';
+    background-image: url(../../../images/banque/background.jpg);
+    background-size: cover;
+    
+}
+
+
+.article{
+    min-height:500px;
+    margin-bottom: 100px;
+}
+.article__title{
+    min-height: 14px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    padding: 0px;
+}
+.card-body{
+    border-top:solid 1px #4b545e4b;
+}
+
+.article__image img{
+    box-shadow: .2rem .2rem .5rem rgb(71, 52, 52);
+}
+.article__title h2{
+    font-size:2rem;
+}
+.home__title{
+    margin-top:50px;
+    margin-bottom: 100px;
+
+}
+.home__title h1{
+    font-size:4rem;
+    font-family: 'Righteous', 'sans-serif';
+}
+
+.home__title img{
+    font-size:5rem;
+    
+}
+.socials{
+    font-size:3rem;
+    
+}
+.socials i{
+    color:#212529;
+}
+
+@media screen and (max-width:768px){
+    :root{
+        font-size:12px;
+    }
+    
+}
