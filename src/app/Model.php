@@ -4,7 +4,7 @@ abstract class Model{//classe contenant la connexion à la bdd ainsi que des mé
     // Informations de base de données
 
     private $host="localhost";
-    private $dbname="ronan";
+    private $dbname="vign7559_ronan";
     private $username = "ronan";
     private $password="Mo2p@ss974";
     // private $username = "christian";
