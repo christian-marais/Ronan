@@ -25,17 +25,15 @@ class Admin extends Controller{
 
             }elseif(!empty($_POST['edit'])){//si on veut accéder à la page d'édition d'un produit
                 $this->loadModel("Article");
-                $this->loadModel("Categorie");
                 $article=$this->Article->getOneArticle('idProd',htmlspecialchars($_POST['edit']));//les données recues sont systématiquement échappées
-                $categories=$this->Categorie->getAllCategories();
+    
                 $this->layout='admin';
-                $this->render('editArticle',compact('article','categories'));
+                $this->render('editArticle',compact('article'));
 
 
             }elseif(isset($_POST['validating_edit'])){//quand on valide une edition
                 
                 $this->loadModel("Article");
-                $this->loadModel("Categorie");
                 $article=$this->Article->getOneArticle('idProd',htmlspecialchars($_POST['validating_edit']));
                 
                 //json avec les données de l'image et ses contrainte; la méthode gestion de fichier s'occupe de la sélection et du déplacement de fichier
@@ -57,9 +55,8 @@ class Admin extends Controller{
                     unlink(ROOT.'images/produits/'.$article['libProd'].$article['idProd'].$_POST['nomImage']);
                 }
                 $article=$this->Article->getOneArticle('idProd',htmlspecialchars($_POST['validating_edit']));
-                $categories=$this->Categorie->getAllCategories();
                 $this->layout='admin';
-                $this->render('editArticle',compact('article','categories')); 
+                $this->render('editArticle',compact('article')); 
 
 
             }elseif(!empty($_POST['delete'])){//si si on valide le delete
@@ -75,10 +72,9 @@ class Admin extends Controller{
                
 
             }elseif(isset($_POST['create'])){//si on veut aller sur la page de création de produit
-                $this->loadModel("Categorie");
-                $categories=$this->Categorie->getAllCategories();
+     
                 $this->layout='admin';
-                $this->render('createArticle',compact('categories'));
+                $this->render('createArticle');
 
 
             }elseif(isset($_POST['validating_create'])){//si on valide la création

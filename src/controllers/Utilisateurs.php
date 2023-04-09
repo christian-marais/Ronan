@@ -4,9 +4,7 @@ class Utilisateurs extends Controller{//classe utilisée pour la gestion du logi
     
     public function login(){
         $this->loadModel("Utilisateur");
-        $url_images=scandir(ROOT.'/images/slider');
-        $url_images=array_splice($url_images,3);
-
+        
         $this->layout='login';//le layout login comprend l'element html, snippet du formulaire de connexion par sa constante LOGIN
         $this->theme='login';
         
